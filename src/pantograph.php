@@ -2,7 +2,8 @@
 
 
 /*
-    Configurations
+    Configurations:
+    
         $SECRET : This has to be the secret set for the Github WebHook and
             it's used by Github's Hookshot to sign the payload and then it's
             uesd here to verify that it's sent by the configured hook.
@@ -32,7 +33,6 @@ $REPO_BRANCH = "master";
 //$USER_ACCESS_TOKEN = "########################################";
 
 
-define("DEBUG");
 
 
 
@@ -89,15 +89,12 @@ if(isset($_SERVER['HTTP_X_HUB_SIGNATURE'])){
     $hash = hash_hmac("sha1",file_get_contents("php://input") , $SECRET);
     $signature = explode("=", $_SERVER['HTTP_X_HUB_SIGNATURE'], 2)[1];
     if($hash != $signature){
-        if(defined("DEBUG")){
-            http_response_code(401);
-            die("Invalid Signature");
-        }
-        die();
+        http_response_code(401);
+        die("Invalid Signature");
     }
     if($_SERVER["CONTENT_TYPE"] != "application/x-www-form-urlencoded"){
         http_response_code(400);
-        die("Please Use mime type application/x-www-form-urlencoded");
+        die("Please use mime type application/x-www-form-urlencoded");
     }
     if($_SERVER['HTTP_X_GITHUB_EVENT'] != "push" && $_SERVER['HTTP_X_GITHUB_EVENT'] != "ping"){
         http_response_code(404);
