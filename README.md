@@ -13,7 +13,7 @@ Note: The HTTP server has to be online 24/7 or whenever a change occurs in the s
 The below variables has to be configured in `pantograph.php`
 ```php
 $SECRET = "********Github WebHook Signature's Secret*******";
-$LOCAL_PATH = ".."; // The path to the directory on you http server to which 
+$LOCAL_PATH = "..";
 $REPO_PATH = "src";
 $REPO_BRANCH = "master";
 //$USER_ACCESS_TOKEN = "########################################";
