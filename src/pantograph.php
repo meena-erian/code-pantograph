@@ -1,5 +1,6 @@
 <?php
 
+
 $SECRET = "****************************************";
 $LOCAL_PATH = "..";
 $REPO_PATH = "src";
@@ -74,7 +75,7 @@ if(isset($_SERVER['HTTP_X_HUB_SIGNATURE'])){
         http_response_code(400);
         die("Please Use mime type application/x-www-form-urlencoded");
     }
-    if($_SERVER['HTTP_X_GITHUB_EVENT'] != "push"){
+    if($_SERVER['HTTP_X_GITHUB_EVENT'] != "push" && $_SERVER['HTTP_X_GITHUB_EVENT'] != "ping"){
         http_response_code(404);
         die("This resource handles push events only");
     }
