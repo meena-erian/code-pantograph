@@ -50,6 +50,6 @@ After configuring `pantograph.php`,
 Whenever any changes occur in the specified repository:
 1. Github's HookShot sends notification Git **push** event to pantograph.php, in which it specifies what files has changed in this event. 
 2. `pantograph.php` validates that this is a valid notification and signed by Github with the Hmac signature with the same secret set as set in the hook's settings and then it filters out any files lying outside the specified directory.
-3. `pantograph.php` makes GET calls to the Github API to fetch the new files and then is writes, overwrites, or deletes their alternative copies on the local folder of the HTTP server.
+3. `pantograph.php` makes GET calls to the Github API to fetch the new files and then it writes, overwrites, or deletes their alternative copies on the local folder of the HTTP server.
 
 Note: Just like a pantograph, it only writes the **changes** and it doesn't verify that the current local copy is the same as in the Github repository. 
