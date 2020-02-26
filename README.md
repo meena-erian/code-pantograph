@@ -1,5 +1,5 @@
 # code-pantograph
-Use this PHP script to synchronize a folder on an HTTP server with a folder in a Github repository. Such that any commits or puch events on the files on the specified folder in the specified repository will directly take effect on its remote copy in the configured http server.
+Use this PHP script to synchronize a folder on an HTTP server with a folder in a Github repository. Such that any commits or push events on the files on the specified folder in the specified repository will directly take effect on its remote copy in the configured http server.
 
 # Setup Requirments
  * You have to be a contributor in the specified repository because you will need to create a Github webhook
